@@ -1,12 +1,12 @@
 const defaultResult = 0;
 let currentResult = defaultResult;
 
-function addNumber(num1, num2) {
-  const result = num1 + num2;
-  return result;
+function addNumber() {
+  const currentResult = currentResult + userInput.value;
+  outputResult(currentResult, calculationDescription);
 }
+
+addBtn.addEventListener("click", "");
 
 currentResult = addNumber(12, 123);
 let calculationDescription = currentResult;
-
-outputResult(currentResult, calculationDescription);
