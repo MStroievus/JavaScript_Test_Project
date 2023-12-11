@@ -1,4 +1,5 @@
 const ATTACK_VALUE = 20;
+const MONSTER_ATTACK_VALUE = 21;
 
 let chosenMaxLife = 100;
 let currentMonsterLife = chosenMaxLife;
@@ -7,13 +8,16 @@ let currentPlayerLife = chosenMaxLife;
 adjustHealthBars(chosenMaxLife);
 
 function attackHandle() {
-  const damage = dealMonsterDamage(ATTACK_VALUE);
-  currentMonsterLife -= damage;
+  const monsterDamage = dealMonsterDamage(ATTACK_VALUE);
+  currentMonsterLife -= monsterDamage;
 
-  damage;
+  const playerDamage = dealPlayerDamage(MONSTER_ATTACK_VALUE);
+  currentPlayerLife -= playerDamage;
 
   if (currentMonsterLife <= 0) {
     return alert("monster lost this game");
+  } else if (currentPlayerLife <= 0) {
+    return alert("You are loser");
   }
 }
 
